@@ -2,7 +2,7 @@
   "name": "Plank Calculator",
   "short_name": "Planks",
   "description": "Calculate plank spacing for your room",
-  "start_url": "/",
+  "start_url": "/plank-calculator/",
   "display": "standalone",
   "background_color": "#413a34",
   "theme_color": "#ffd186",
