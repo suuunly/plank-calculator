@@ -26,6 +26,12 @@
       border-radius: 5px;
     }
 
+    #calculator h1 {
+      font-weight: bold;
+      color: #2b2622;
+      text-align: center;
+    }
+
     #calculator p {
       font-size: 0.8rem;
       color: rgba(0, 0, 0, 0.5);
@@ -77,7 +83,7 @@
     // Register Service Worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js')  // Changed from '/sw.js' to './sw.js'
+        navigator.serviceWorker.register('/sw.js')
           .then(registration => {
             console.log('ServiceWorker registration successful');
           })
@@ -116,6 +122,18 @@
       const distance = Number(document.getElementById("distance").value);
       const plankWidth = Number(document.getElementById("plank-width").value);
       const gap = Number(document.getElementById("gap").value);
+
+      if (!distance || distance < 0) {
+        return;
+      }
+
+      if (!plankWidth || plankWidth < 0) {
+        return;
+      }
+
+      if (!gap || gap < 0) {
+        return;
+      }
 
       // calculate the number of planks
       const gapOnBothSides = gap * 2;
